@@ -136,6 +136,7 @@
     <ClCompile Include="game.cpp" />
     <ClCompile Include="input.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="moveable.cpp" />
     <ClCompile Include="shape.cpp" />
     <ClCompile Include="transform.cpp" />
   </ItemGroup>
@@ -148,6 +149,7 @@
     <ClInclude Include="entityType.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="input.h" />
+    <ClInclude Include="moveable.h" />
     <ClInclude Include="shape.h" />
     <ClInclude Include="transform.h" />
   </ItemGroup>

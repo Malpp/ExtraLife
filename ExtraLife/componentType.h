@@ -5,4 +5,5 @@ enum class ComponentType
 	transform,
 	shape,
 	collider,
+	moveable,
 };

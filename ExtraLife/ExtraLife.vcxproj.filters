@@ -48,6 +48,9 @@
     <ClCompile Include="shape.cpp">
       <Filter>Source Files\Entity\Component</Filter>
     </ClCompile>
+    <ClCompile Include="moveable.cpp">
+      <Filter>Source Files\Entity\Component</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="consts.h">
@@ -78,6 +81,9 @@
       <Filter>Header Files\Entity\Component</Filter>
     </ClInclude>
     <ClInclude Include="shape.h">
+      <Filter>Header Files\Entity\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="moveable.h">
       <Filter>Header Files\Entity\Component</Filter>
     </ClInclude>
   </ItemGroup>

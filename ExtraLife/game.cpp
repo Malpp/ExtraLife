@@ -3,6 +3,7 @@
 #include "consts.h"
 #include "input.h"
 #include "shape.h"
+#include "moveable.h"
 
 void Game::events()
 {
@@ -22,6 +23,7 @@ inline Entity CreateEntity(sf::Vector2f position)
 	Entity entity = Entity(EntityType::character);
 	entity.addComponent(new Shape(entity, new sf::RectangleShape(sf::Vector2f(10, 20))));
 	entity.addComponent(new Transform(entity, position, 0));
+	entity.addComponent(new Moveable(entity, 8, 30));
 
 	return entity;
 }
@@ -38,7 +40,7 @@ void Game::run()
 		window.clear();
 		Input::update();
 
-		update(deltaClock.restart().asMilliseconds());
+		update(deltaClock.restart().asSeconds());
 		collision();
 		draw();
 		
