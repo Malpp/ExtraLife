@@ -3,7 +3,7 @@
 class Component
 {
 public:
-	Component(ComponentType componentType);
+	explicit Component(ComponentType componentType);
 
 	ComponentType getType() const;
 

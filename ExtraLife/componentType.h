@@ -2,5 +2,7 @@
 
 enum class ComponentType
 {
-
+	TRANSFORM,
+	SHAPE,
+	COLLIDER,
 };
