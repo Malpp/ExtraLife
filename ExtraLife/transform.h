@@ -3,8 +3,10 @@
 #include <SFML/System/Vector2.hpp>
 #include <SFML/Graphics/Transformable.hpp>
 
-class Transform : Component
+class Transform : public Component
 {
+protected:
+	~Transform() = default;
 public:
 	Transform(Entity& parent);
 	Transform(Entity& parent, sf::Vector2f position, float angle);
@@ -24,4 +26,5 @@ public:
 
 private:
 	sf::Transformable transformable;
+	void updateComponents() const;
 };

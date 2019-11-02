@@ -1,6 +1,7 @@
 #pragma once
 #include "componentType.h"
-#include "entity.h"
+
+class Entity;
 
 class Component
 {

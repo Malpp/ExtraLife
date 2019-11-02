@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "consts.h"
 #include "input.h"
+#include "shape.h"
 
 void Game::events()
 {
@@ -16,9 +17,19 @@ void Game::events()
 	}
 }
 
+inline Entity CreateEntity(sf::Vector2f position)
+{
+	Entity entity = Entity(EntityType::character);
+	entity.addComponent(new Transform(entity, position, 0));
+	entity.addComponent(new Shape(entity, sf::RectangleShape(sf::Vector2f(10, 20))));
+
+	return entity;
+}
+
 void Game::run()
 {
 	sf::Clock deltaClock;
+	entities.push_back(CreateEntity(sf::Vector2f(20, 20)));
 	
 	while (window.isOpen())
 	{
@@ -49,6 +60,14 @@ void Game::collision()
 
 void Game::draw()
 {
+	for (Entity entity : entities)
+	{
+		Shape* shape = nullptr;
+		if(entity.getComponent(ComponentType::shape, shape))
+		{
+			shape->draw(&window);
+		}
+	}
 }
 
 Game::Game() : window(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "SFML works!", sf::Style::Titlebar)

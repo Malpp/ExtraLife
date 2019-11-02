@@ -45,6 +45,9 @@
     <ClCompile Include="transform.cpp">
       <Filter>Source Files\Entity\Component</Filter>
     </ClCompile>
+    <ClCompile Include="shape.cpp">
+      <Filter>Source Files\Entity\Component</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="consts.h">

@@ -2,5 +2,6 @@
 
 enum class EntityType
 {
-	
+	character,
+	bullet
 };
