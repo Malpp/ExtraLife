@@ -7,9 +7,9 @@ Shape::Shape(Entity& parent, sf::RectangleShape* shape): Component(ComponentType
 
 void Shape::draw(sf::RenderWindow* window)
 {
-	if (this->shape != nullptr)
+	if (shape != nullptr)
 	{
-		window->draw(*this->shape);
+		window->draw(*shape);
 	}
 }
 
