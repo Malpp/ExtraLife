@@ -7,11 +7,11 @@
 class Shape : public Component
 {
 public:
-	Shape(Entity& parent, sf::RectangleShape shape);
+	Shape(Entity& parent, sf::RectangleShape* shape);
 	void draw(sf::RenderWindow* window);
 	
 private:
 	friend class Transform;
 	void updateTransform(const sf::Transformable& transformable);
-	sf::RectangleShape shape;
+	sf::RectangleShape* shape;
 };

@@ -21,7 +21,7 @@ inline Entity CreateEntity(sf::Vector2f position)
 {
 	Entity entity = Entity(EntityType::character);
 	entity.addComponent(new Transform(entity, position, 0));
-	entity.addComponent(new Shape(entity, sf::RectangleShape(sf::Vector2f(10, 20))));
+	entity.addComponent(new Shape(entity, new sf::RectangleShape(sf::Vector2f(10, 20))));
 
 	return entity;
 }
@@ -63,7 +63,7 @@ void Game::draw()
 	for (Entity entity : entities)
 	{
 		Shape* shape = nullptr;
-		if(entity.getComponent(ComponentType::shape, shape))
+		if(entity.getComponent<Shape>(ComponentType::shape, &shape))
 		{
 			shape->draw(&window);
 		}

@@ -66,7 +66,7 @@ void Transform::rotate(float angle)
 void Transform::updateComponents() const
 {
 	Shape* shape = nullptr;
-	if(entity.getComponent(ComponentType::shape, shape))
+	if(entity.getComponent<Shape>(ComponentType::shape, &shape))
 	{
 		shape->updateTransform(transformable);
 	}
