@@ -13,8 +13,9 @@ public:
 
 	bool addComponent(Component* component);
 	bool removeComponent(ComponentType componentType);
-	
-	Component getComponent(ComponentType componentType);
+
+	template<typename T>
+	bool getComponent(ComponentType componentType, T* component);
 	EntityType getType();
 
 private:

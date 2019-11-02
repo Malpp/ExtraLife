@@ -1,7 +1,7 @@
 #include "componentType.h"
 #include "component.h"
 
-Component::Component(ComponentType componentType): componentType(componentType)
+Component::Component(ComponentType componentType, Entity& parent): entity(parent), componentType(componentType)
 {
 }
 

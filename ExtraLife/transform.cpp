@@ -1,46 +1,56 @@
 #include "transform.h"
 #include "componentType.h"
 
-Transform::Transform(): Component(ComponentType::TRANSFORM)
+Transform::Transform(Entity& parent): Component(ComponentType::transform, parent)
 {
 }
 
-Transform::Transform(sf::Vector2<float> position, float rotation): Component(ComponentType::TRANSFORM)
+Transform::Transform(Entity& parent, sf::Vector2f position, float angle): Component(ComponentType::transform, parent)
 {
-	this->position = position;
-	this->rotation = rotation;
+	this->transformable.setPosition(position);
+	this->transformable.setRotation(angle);
 }
 
 void Transform::update(float deltaTime)
 {
 }
 
-void Transform::setPosition(sf::Vector2<float> position)
+void Transform::setPosition(sf::Vector2f position)
 {
-	this->position = position;
+	this->transformable.setPosition(position);
 }
 
-void Transform::setRotation(float rotation)
+void Transform::setRotation(float angle)
 {
-	this->rotation = rotation;
+	this->transformable.setRotation(angle);
 }
 
-sf::Vector2<float> Transform::getPosition()
+void Transform::setScale(sf::Vector2f scale)
 {
-	return position;
+	transformable.setScale(scale);
+}
+
+sf::Vector2f Transform::getPosition()
+{
+	return transformable.getPosition();
 }
 
 float Transform::getRotation()
 {
-	return rotation;
+	return transformable.getRotation();
 }
 
-void Transform::move(sf::Vector2<float> direction)
+sf::Vector2f Transform::getScale()
 {
-	position += direction;
+	return transformable.getScale();
 }
 
-void Transform::rotate(float rotation)
+void Transform::move(sf::Vector2f direction)
 {
-	this->rotation += rotation;
+	transformable.move(direction);
+}
+
+void Transform::rotate(float angle)
+{
+	transformable.rotate(angle);
 }

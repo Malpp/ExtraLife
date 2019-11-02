@@ -28,9 +28,11 @@ bool Entity::removeComponent(ComponentType componentType)
 	return components.erase(componentType);
 }
 
-Component Entity::getComponent(ComponentType componentType)
+template<typename T>
+bool Entity::getComponent(ComponentType componentType, T* component)
 {
-	return *components.find(componentType)->second;
+	component = components.find(componentType)->second;
+	return component != nullptr;
 }
 
 EntityType Entity::getType()

@@ -1,15 +1,18 @@
 #pragma once
+#include "componentType.h"
+#include "entity.h"
 
 class Component
 {
 public:
-	explicit Component(ComponentType componentType);
+	Component(ComponentType componentType, Entity& parent);
 
 	ComponentType getType() const;
 
 	virtual void update(float deltaTime);
 
 protected:
-	const ComponentType componentType;
+	Entity& entity;
+	ComponentType componentType;
 	~Component() = default;
 };
