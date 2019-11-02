@@ -20,8 +20,8 @@ void Game::events()
 inline Entity CreateEntity(sf::Vector2f position)
 {
 	Entity entity = Entity(EntityType::character);
-	entity.addComponent(new Transform(entity, position, 0));
 	entity.addComponent(new Shape(entity, new sf::RectangleShape(sf::Vector2f(10, 20))));
+	entity.addComponent(new Transform(entity, position, 0));
 
 	return entity;
 }
@@ -29,7 +29,7 @@ inline Entity CreateEntity(sf::Vector2f position)
 void Game::run()
 {
 	sf::Clock deltaClock;
-	entities.push_back(CreateEntity(sf::Vector2f(20, 20)));
+	entities.push_back(CreateEntity(sf::Vector2f(100, 100)));
 	
 	while (window.isOpen())
 	{
