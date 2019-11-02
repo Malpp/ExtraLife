@@ -7,6 +7,8 @@ class Input
 {
 private:
 	static sf::Vector2f getAxis(sf::Joystick::Axis x, sf::Joystick::Axis y, unsigned int stick);
+	static void playerJoined(unsigned int stick);
+	static void checkIfPlayerJoined(unsigned int stick);
 	static std::set<unsigned int> joined;
 	static bool pressed[sf::Joystick::Count];
 public:
