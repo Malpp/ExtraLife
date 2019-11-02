@@ -1,6 +1,7 @@
 #include "Game.h"
 #include <SFML/Graphics.hpp>
 #include "consts.h"
+#include "input.h"
 
 void Game::events()
 {
@@ -17,15 +18,12 @@ void Game::events()
 
 void Game::run()
 {
-	sf::CircleShape shape(100.f);
-	shape.setFillColor(sf::Color::Green);
-
 	while (window.isOpen())
 	{
 		events();
 		
 		window.clear();
-		window.draw(shape);
+		Input::update();
 		window.display();
 	}
 }

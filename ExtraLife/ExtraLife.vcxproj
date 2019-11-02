@@ -134,6 +134,7 @@
     <ClCompile Include="component.cpp" />
     <ClCompile Include="entity.cpp" />
     <ClCompile Include="game.cpp" />
+    <ClCompile Include="input.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -143,6 +144,7 @@
     <ClInclude Include="entity.h" />
     <ClInclude Include="entityType.h" />
     <ClInclude Include="game.h" />
+    <ClInclude Include="input.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
