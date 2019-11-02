@@ -3,22 +3,21 @@
 
 Entity::Entity(EntityType entityType): entityType(entityType)
 {
-	components = {};
 }
 
 void Entity::update(float deltaTime)
 {
 	for (auto& component : components)
 	{
-		component.second.update(deltaTime);
+		component.second->update(deltaTime);
 	}
 }
 
-bool Entity::addComponent(Component& component)
+bool Entity::addComponent(Component* component)
 {
-	if (!components.count(component.getType()))
+	if (!components.count(component->getType()))
 	{
-		components.emplace(component.getType(), component);
+		components.emplace(component->getType(), component);
 		return true;
 	}
 	return false;
@@ -31,10 +30,10 @@ bool Entity::removeComponent(ComponentType componentType)
 
 Component Entity::getComponent(ComponentType componentType)
 {
-	return components.find(componentType)->second;
+	return *components.find(componentType)->second;
 }
 
-EntityType Entity::getType() const
+EntityType Entity::getType()
 {
 	return entityType;
 }

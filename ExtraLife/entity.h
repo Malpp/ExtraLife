@@ -11,15 +11,13 @@ public:
 
 	void update(float deltaTime);
 
-	bool addComponent(Component& component);
+	bool addComponent(Component* component);
 	bool removeComponent(ComponentType componentType);
 	
 	Component getComponent(ComponentType componentType);
-	EntityType getType() const;
+	EntityType getType();
 
 private:
 	EntityType entityType;
-	std::map<ComponentType, Component, std::hash<int>> components;
-	
-	~Entity() = default;
+	std::map<ComponentType, Component*> components;
 };

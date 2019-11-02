@@ -16,17 +16,14 @@
     <Filter Include="Source Files\Entity">
       <UniqueIdentifier>{ce76c861-9be7-4d94-afeb-803e0483ac54}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files\Entity">
-      <UniqueIdentifier>{15aa506f-fbe9-4fa2-b7b1-6264c03394e4}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Entity\Component">
       <UniqueIdentifier>{9c577c03-e58f-42f6-8817-0231e25a1b43}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files\Entity\Component">
-      <UniqueIdentifier>{d9a28e1e-0d35-4eca-bce9-265c13e4b5bd}</UniqueIdentifier>
+    <Filter Include="Header Files\Entity">
+      <UniqueIdentifier>{15aa506f-fbe9-4fa2-b7b1-6264c03394e4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files\Utilities">
-      <UniqueIdentifier>{4c93d607-0cca-47f9-b5a0-18d9368f9d4d}</UniqueIdentifier>
+    <Filter Include="Header Files\Entity\Component">
+      <UniqueIdentifier>{d9a28e1e-0d35-4eca-bce9-265c13e4b5bd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -51,16 +48,16 @@
       <Filter>Resource Files</Filter>
     </ClInclude>
     <ClInclude Include="component.h">
-      <Filter>Resource Files\Entity\Component</Filter>
+      <Filter>Header Files\Entity\Component</Filter>
     </ClInclude>
     <ClInclude Include="componentType.h">
-      <Filter>Resource Files\Entity\Component</Filter>
+      <Filter>Header Files\Entity\Component</Filter>
     </ClInclude>
     <ClInclude Include="entity.h">
-      <Filter>Resource Files\Entity</Filter>
+      <Filter>Header Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="entityType.h">
-      <Filter>Resource Files\Entity</Filter>
+      <Filter>Header Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="game.h">
       <Filter>Header Files</Filter>
