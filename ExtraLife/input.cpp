@@ -9,20 +9,38 @@ void Input::update()
 {
 	for (int i = 0; i < sf::Joystick::Count; ++i)
 	{
-		if (sf::Joystick::isConnected(i) && sf::Joystick::isButtonPressed(i, 7))
+		if (sf::Joystick::isConnected(i))
 		{
-			auto find = joined.find(i);
-			if(find == joined.end())
-			{
-				joined.emplace(i);
-				std::cout << "Player " << i << " joined!\n";
-			}
-			else
-			{
-				joined.erase(find);
-				std::cout << "Player " << i << " left!\n";
-			}
+			checkIfPlayerJoined(i);
 		}
+	}
+}
+
+void Input::playerJoined(unsigned stick)
+{
+	auto find = joined.find(stick);
+	if (find == joined.end())
+	{
+		joined.emplace(stick);
+		std::cout << "Player " << stick << " joined!\n";
+	}
+	else
+	{
+		joined.erase(find);
+		std::cout << "Player " << stick << " left!\n";
+	}
+}
+
+void Input::checkIfPlayerJoined(unsigned stick)
+{
+	if (sf::Joystick::isButtonPressed(stick, 7))
+	{
+		pressed[stick] = true;
+	}
+	else if (pressed[stick])
+	{
+		pressed[stick] = false;
+		playerJoined(stick);
 	}
 }
 
