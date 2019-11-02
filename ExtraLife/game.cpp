@@ -18,14 +18,37 @@ void Game::events()
 
 void Game::run()
 {
+	sf::Clock deltaClock;
+	
 	while (window.isOpen())
 	{
 		events();
 		
 		window.clear();
 		Input::update();
+
+		update(deltaClock.restart().asMilliseconds());
+		collision();
+		draw();
+		
 		window.display();
 	}
+}
+
+void Game::update(float deltaTime)
+{
+	for (Entity entity : entities)
+	{
+		entity.update(deltaTime);
+	}
+}
+
+void Game::collision()
+{
+}
+
+void Game::draw()
+{
 }
 
 Game::Game() : window(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "SFML works!", sf::Style::Titlebar)
